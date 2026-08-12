@@ -1,0 +1,26 @@
+name: Sync Upstream Wiki
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 */6 * * *"
+
+jobs:
+  sync-wiki:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone upstream Wiki
+        run: |
+          git clone --mirror \
+            https://github.com/Aethersailor/Custom_OpenClash_Rules.wiki.git \
+            upstream-wiki.git
+
+      - name: Push to my Wiki
+        env:
+          WIKI_TOKEN: ${{ secrets.WIKI_TOKEN }}
+        run: |
+          cd upstream-wiki.git
+
+          git push --mirror \
+            "https://x-access-token:${WIKI_TOKEN}@github.com/cmhr0086/Custom_OpenClash_Rules.wiki.git"
