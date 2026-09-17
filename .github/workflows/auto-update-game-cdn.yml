@@ -7,9 +7,6 @@ on:
     paths:
       - 'rule/Steam_CDN.list'
       - 'py/generate_game_cdn.py'
-  schedule:
-    # 每天北京时间 10:13 运行（UTC 02:13）
-    - cron: '13 2 * * *'
   workflow_dispatch:  # 支持手动触发
 
 permissions:
