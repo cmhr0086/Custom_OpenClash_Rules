@@ -2,8 +2,7 @@
   "repository": "Aethersailor/Custom_OpenClash_Rules",
   "branch": "main",
   "ref_aliases": [
-    "main",
-    "refs/heads/main"
+    "main"
   ],
   "public_roots": [
     "cfg",
@@ -11,7 +10,8 @@
     "overwrite",
     "rule",
     "script",
-    "shell"
+    "shell",
+    "wiki"
   ],
   "deferred_sources": [
     "rule/Custom_Direct.list",
@@ -19,6 +19,7 @@
     "rule/Steam_CDN.list",
     "rule/Encrypted_DNS.list",
     "rule/Game_Download_CDN.list",
+    "rule/Tailscale_STUN.list",
     "rule/game_rule/Battlefield-1/Battlefield-1_Windows-PC_Africa.list",
     "rule/game_rule/Battlefield-1/Battlefield-1_Windows-PC_All-Servers.list",
     "rule/game_rule/Battlefield-1/Battlefield-1_Windows-PC_Americas.list",
@@ -42,6 +43,10 @@
     "rule/game_rule/Microsoft-Flight-Simulator-2020/Microsoft-Flight-Simulator-2020_All-Servers.list",
     "rule/game_rule/Overwatch2/Overwatch2_Asia-Singapore.list"
   ],
+  "snapshot_deferred_inputs": [
+    "py/generate_rules.py",
+    "cfg/Custom_Clash.ini"
+  ],
   "generated_suffixes": [
     "Domain.yaml",
     "Domain.mrs",
@@ -54,10 +59,6 @@
   "excluded_prefixes": [
     "overwrite/OpenClash_Overwrite"
   ],
-  "excluded_path_parts": [
-    "archived"
-  ],
-  "excluded_basenames": [
-    "README.md"
-  ]
+  "excluded_path_parts": [],
+  "excluded_basenames": []
 }
